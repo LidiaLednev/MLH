@@ -35,4 +35,32 @@ describe('My Little Hero', function () { //define suite title by passing a strin
 
     });
 
+const sel = require('../../data/selectors.json');
+const exp = require('../../data/expected.json');
+
+    describe('Elements are correct', function () {
+
+        it('TC-006 Label for name = 1. What is your HERO\'s name?', function () {
+            const text = $$(sel.label)[0].getAttribute('title');
+            expect(text).toEqual(exp.labelName);
+        });
+
+        it('TC-007 Label for gendenpr =  2. Please choose a gender.', function () {
+            const text = $$(sel.label)[1].getAttribute('title');
+            expect(text).toEqual(exp.labelGender);
+        });
+
+        // it('TC-008 Label for age', function () {
+        //     const label = $$(sel.label)[2].isDisplayed();
+        //     expect(label).toEqual(true);
+        // });
+        //
+        // it('TC-009 Label for story', function () {
+        //     const label = $$(sel.label)[3].isDisplayed();
+        //     expect(label).toEqual(true);
+        // });
+
+    });
+
+
 });
